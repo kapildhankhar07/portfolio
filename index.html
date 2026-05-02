@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapil Dhankhar | Crayon Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="paper-texture"></div>
+
+    <div class="container">
+        <header class="header-area scribble-border">
+            <h1>Kapil Dhankhar</h1>
+            <p class="tagline">Developer • UI Designer • Creator • Game Dev</p>
+        </header>
+
+        <div class="art-area">
+            <div class="doodle sun">☀️</div>
+            <div class="doodle cloud">☁️</div>
+            <div class="doodle rocket">🚀</div>
+        </div>
+
+        <nav class="nav-area">
+            <button id="about-btn" class="nav-btn scribble-border">About Me</button>
+            <button id="skills-btn" class="nav-btn scribble-border">My Skills</button>
+            <a href="projects.html" class="nav-btn scribble-border">My Projects</a>
+            <a href="downloads.html" class="nav-btn scribble-border">Download</a>
+            <a href="contact.html" class="nav-btn scribble-border">Contact</a>
+        </nav>
+    </div>
+
+    <div id="about-display" class="modal hidden">
+        <div class="modal-content scribble-box">
+            <button class="close-btn">✖</button>
+            <h2>Hey, I'm Kapil Dhankhar 👋</h2>
+            <div class="about-text">
+                <p><strong>A developer who believes "if it works perfectly, it looks beautiful automatically."</strong></p>
+                <p>I mostly code in Python, but honestly… language doesn't matter much to me. If a problem needs to be solved, I'll find a way — web, software, or even game logic.</p>
+                <p>I've built things like email automation tools, video splitters, and other random-but-useful projects that started as ideas and ended up as working systems.</p>
+                <p>I'm not the guy who spends hours picking colors for a button. I'm the guy who makes sure that button actually does something powerful.</p>
+                
+                <ul class="cool-list">
+                    <li><span class="scribble-highlight" style="background: var(--crayon-yellow);">💡 Performance &gt; Looks</span></li>
+                    <li><span class="scribble-highlight" style="background: var(--crayon-green);">⚡ Logic &gt; Trends</span></li>
+                    <li><span class="scribble-highlight" style="background: var(--crayon-red); color: white;">🐞 Bugs? Yeah… we’ve met before.</span></li>
+                </ul>
+
+                <p>Most of my work is about experimenting, breaking things, fixing them, and making them better than before. So if you need something that actually works (and works well), we’ll get along just fine.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="skills-display" class="modal hidden">
+        <div class="modal-content scribble-box">
+            <button class="close-btn">✖</button>
+            <h2>My Toolbox 🛠️</h2>
+            <div class="skills-list">
+                <p><span class="skill-red scribble-highlight">C, C++</span> : Building the core logic.</p>
+                <p><span class="skill-yellow scribble-highlight">Java, Python</span> : Backend magic & automation.</p>
+                <p><span class="skill-green scribble-highlight">Web Dev</span> : Crafting beautiful UI/UX.</p>
+                <p><span class="skill-yellow scribble-highlight">Game Dev</span> : Designing interactive worlds.</p>
+                <p><span class="skill-dark scribble-highlight">DSA & Databases</span> : Problem solving & structuring data.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

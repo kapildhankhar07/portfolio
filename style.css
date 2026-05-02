@@ -1,0 +1,220 @@
+/* --- CSS Variables & Global Styles --- */
+:root {
+    --bg-paper: #fdf6e3;
+    --text-color: #2c3e50;
+    --crayon-red: #ff5e5e;
+    --crayon-yellow: #ffdc5e;
+    --crayon-green: #5eff8a;
+    --crayon-blue: #5e9eff;
+    --font-hand: 'Patrick Hand', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-paper);
+    color: var(--text-color);
+    font-family: var(--font-hand);
+    font-size: 1.2rem;
+    overflow-x: hidden;
+}
+
+/* --- Paper Texture Background --- */
+.paper-texture {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 999;
+    background-image: url('https://www.transparenttextures.com/patterns/notebook-dark.png');
+    opacity: 0.3;
+}
+
+/* --- Shared Layout & Scribble Effects --- */
+.scribble-border {
+    border: 3px solid var(--text-color);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; 
+    padding: 15px 25px;
+    background: white;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+/* --- Header Section --- */
+.header-area {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    transform: rotate(-1deg);
+    transition: transform 0.3s;
+}
+.header-area:hover { transform: rotate(1deg); }
+.header-area h1 { font-size: 3.5rem; color: var(--crayon-blue); letter-spacing: 2px; }
+.tagline { font-size: 1.5rem; color: var(--text-color); }
+
+/* --- Navigation & Buttons --- */
+.nav-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 800px;
+    width: 100%;
+}
+.nav-btn {
+    font-family: var(--font-hand);
+    font-size: 1.8rem;
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+    background: white;
+    transition: all 0.2s;
+    transform: rotate(2deg);
+    display: block;
+}
+.nav-btn:nth-child(even) { transform: rotate(-2deg); }
+.nav-btn:hover { transform: scale(1.1) rotate(0deg); background: var(--crayon-yellow); }
+
+/* --- Doodle Art (Home Page) --- */
+.art-area { display: flex; gap: 3rem; font-size: 4rem; justify-content: center; }
+.doodle { transition: transform 0.3s; cursor: pointer; }
+.doodle:hover { transform: scale(1.3) rotate(15deg); }
+
+/* --- Modals (About Me & Skills Popup) --- */
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(253, 246, 227, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 0.3s;
+    padding: 1rem;
+}
+.modal.hidden { opacity: 0; pointer-events: none; }
+
+.scribble-box {
+    background: white;
+    border: 4px solid var(--text-color);
+    border-radius: 2% 95% 3% 90% / 95% 4% 92% 5%;
+    padding: 3rem;
+    max-width: 650px;
+    width: 100%;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto; 
+}
+.scribble-box h2 { font-size: 2.2rem; margin-bottom: 1.5rem; border-bottom: 3px dashed var(--text-color); display: inline-block; }
+.about-text p { font-size: 1.3rem; line-height: 1.5; margin-bottom: 1rem; }
+.cool-list { list-style: none; margin: 1.5rem 0; display: flex; flex-direction: column; gap: 0.8rem; }
+.cool-list li { font-size: 1.4rem; }
+.scribble-highlight {
+    padding: 2px 10px;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; 
+    font-weight: bold;
+    display: inline-block;
+    border: 2px solid rgba(0,0,0,0.5);
+}
+
+/* Skills Colors */
+.skills-list p { font-size: 1.5rem; margin-bottom: 1rem; }
+.skill-red { background: var(--crayon-red); color: white;}
+.skill-yellow { background: var(--crayon-yellow); }
+.skill-green { background: var(--crayon-green); }
+.skill-dark { background: #d1d8e0; }
+
+.close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    background: white;
+    border: 2px solid var(--text-color);
+    border-radius: 50%;
+    width: 40px; height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+}
+.close-btn:hover { background: var(--crayon-red); color: white; transform: scale(1.1); }
+
+/* --- Dynamic Project Cards (Grid Layout) --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02) rotate(1deg);
+    box-shadow: 8px 8px 0px rgba(0,0,0,0.15);
+}
+.project-card h3 {
+    font-size: 2rem;
+    color: var(--crayon-red);
+    border-bottom: 2px dashed var(--text-color);
+    padding-bottom: 5px;
+}
+.project-card p { font-size: 1.3rem; line-height: 1.4; flex-grow: 1; }
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+.tech-tag {
+    background: #e0e0e0;
+    padding: 2px 10px;
+    font-size: 1.1rem;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; 
+    border: 2px solid rgba(0,0,0,0.5);
+    font-weight: bold;
+}
+
+.download-link {
+    display: inline-block;
+    margin-top: 15px;
+    background: var(--crayon-green);
+    color: var(--text-color);
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: 2px solid var(--text-color);
+    transition: background 0.2s, transform 0.2s;
+}
+.download-link:hover { background: var(--crayon-blue); color: white; transform: scale(1.05); }
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .container { padding: 1rem; }
+    .header-area h1 { font-size: 2.5rem; }
+    .nav-btn { width: 90%; text-align: center; font-size: 1.5rem; }
+    .art-area { gap: 1rem; font-size: 3rem; }
+    .scribble-box { padding: 1.5rem; }
+    .close-btn { top: 10px; right: 10px; width: 35px; height: 35px; font-size: 1.2rem; }
+}

@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Email Automation Tool",
+    "description": "An automated system built to handle bulk emails, responses, and parsing efficiently.",
+    "technologies": ["Python", "SMTP", "Automation"],
+    "hasDownload": true,
+    "downloadLink": "#"
+  },
+  {
+    "name": "Video Splitter Utility",
+    "description": "Splits large video files into smaller, manageable chunks without losing rendering quality.",
+    "technologies": ["Python", "FFmpeg"],
+    "hasDownload": true,
+    "downloadLink": "#download-video-splitter"
+  },
+  {
+    "name": "Custom Game Logic Engine",
+    "description": "Core physics and rendering logic engine built from scratch for a 2D platformer.",
+    "technologies": ["C++", "Game Dev"],
+    "hasDownload": false
+  },
+  {
+    "name": "Portfolio Website",
+    "description": "A quirky, hand-drawn style responsive portfolio fetching data dynamically.",
+    "technologies": ["HTML", "CSS", "Vanilla JS"],
+    "hasDownload": true,
+    "downloadLink": "#download-portfolio"
+  },
+  {
+    "name": "AI Email Automation",
+    "description": "An intelligent email automation system built to send bulk emails with dynamic content and smart workflows. Designed to reduce manual effort and handle real-world email tasks efficiently with a performance-first approach.",
+    "technologies": ["Python", "SMTP", "Automation", "AI Logic"],
+    "hasDownload": true,
+    "downloadLink": "https://kapildhankhar07.github.io/cozymail/"
+  }
+]
